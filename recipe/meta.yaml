@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pz_rail_base-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pz_rail_base-{{ version }}.tar.gz
   sha256: 521f56d8432de50a0cbb31f1e2e0f65cf587b76c7d95b21a0d08c34e5712222f
 
 build:
@@ -14,16 +14,16 @@ build:
     - rail = rail.cli.commands:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - setuptools >=62
     - setuptools-scm >=6.2
     - pip
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - deprecated
     - pyyaml
     - numpy <2.0.0
@@ -40,6 +40,7 @@ test:
     - rail --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   license: MIT
