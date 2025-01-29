@@ -1,5 +1,5 @@
 {% set name = "pz-rail-base" %}
-{% set version = "1.0.5" %}
+{% set version = "1.0.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pz_rail_base-{{ version }}.tar.gz
-  sha256: 521f56d8432de50a0cbb31f1e2e0f65cf587b76c7d95b21a0d08c34e5712222f
+  sha256: 9653e5d45dec4842f75d78140cd9c57e5bdcce4b92738ad114894567c4fe51be
 
 build:
   entry_points:
-    - rail = rail.cli.commands:cli
+    - rail = rail.cli.rail.commands:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
@@ -26,10 +26,10 @@ requirements:
     - python >=3.9
     - deprecated
     - pyyaml
-    - numpy <2.0.0
+    - numpy
     - click
     - lsstdesc-ceci >=2.0.1
-    - qp-prob >=0.8.3
+    - qp-prob >=0.9.2
     - scipy >=1.9.0
 
 test:
@@ -47,7 +47,7 @@ about:
   home: http://github.com/LSSTDESC/rail_base
   summary: Base classes and core code for Redshift Assessment Infrastructure Layers
   description: |
-    RAIL is a flexible software library providing tools to produce at-scale photometric redshift data products, including uncertainties and summary statistics, and stress-test them under realistically complex systematics. 
+    RAIL is a flexible software library providing tools to produce at-scale photometric redshift data products, including uncertainties and summary statistics, and stress-test them under realistically complex systematics.
 
 extra:
   recipe-maintainers:
