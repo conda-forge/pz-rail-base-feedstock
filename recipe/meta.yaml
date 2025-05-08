@@ -1,5 +1,5 @@
 {% set name = "pz-rail-base" %}
-{% set version = "1.1.6" %}
+{% set version = "1.1.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pz_rail_base-{{ version }}.tar.gz
-  sha256: 857b701d20a4586220aae04276e9bbacb6b6851690f4086c1fb4b5383d9e5b4c
+  sha256: d99d658a82957bfc5ff924476fb5d8ca338f55bea3d501827bc6ebbc9ff05a01
 
 build:
   entry_points:
