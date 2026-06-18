@@ -1,5 +1,5 @@
 {% set name = "pz-rail-base" %}
-{% set version = "2.0.2" %}
+{% set version = "2.0.8" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pz_rail_base-{{ version }}.tar.gz
-  sha256: c0f4dc56c75f5c085d46f3042ec3c19ecd7b0446f1616c7dbbf4697ff2ce4664
+  sha256: e0d0fb79dfa876aab11eca5419297e7eefc468cd8c13e9737fe931f90afe468c
 
 build:
   entry_points:
